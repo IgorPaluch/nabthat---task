@@ -1,0 +1,240 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@700&family=Fascinate+Inline&family=Khula:wght@300;400;600;700;800&display=swap");
+body,
+html {
+  font-family: "Khula", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  position: relative;
+  background-color: #2a2d36;
+  flex-grow: 1;
+  color: #d2d4d6;
+}
+main .container {
+  width: 96%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main .container .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.2;
+}
+main .container .top h1 {
+  margin-top: 50px;
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  position: relative;
+}
+main .container .top h1::after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 80%;
+  background: #d2d4d6;
+}
+main .container .bottom {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main .container .bottom div {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+}
+main .container .bottom .left {
+  flex-direction: column;
+}
+main .container .bottom .left h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+main .container .bottom .left .container--radio-button {
+  display: flex;
+  flex-direction: column;
+}
+main .container .bottom .left .container--radio-button .container--radio-button--inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* Ukryj oryginalny radio button */
+input[type=radio] {
+  appearance: none; /* Wyłącz domyślny wygląd */
+  padding-right: 20px;
+}
+
+/* Stylowanie nowego tła dla radio buttona */
+input[type=radio]::before {
+  content: "";
+  display: inline-block;
+  width: 30px; /* Powiększ szerokość tła */
+  height: 30px; /* Powiększ wysokość tła */
+  border: 3px solid #d2d4d6; /* Dostosuj grubość obramowania */
+  border-radius: 50%; /* Ustaw zaokrąglenie */
+  background-color: transparent; /* Ustaw przezroczyste tło */
+}
+
+/* Stylowanie zaznaczonego radio buttona */
+input[type=radio]:checked::before {
+  background-color: #0b0c10; /* Dostosuj kolor tła dla zaznaczonego radio buttona */
+}
+
+header {
+  background-color: #0b0c10;
+  color: #d2d4d6;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 140px;
+  z-index: 999;
+}
+header .container {
+  width: 96%; /* Szerokość kontenera */
+  height: 100%;
+  margin: 0 auto; /* Wyśrodkowanie kontenera */
+  display: flex; /* Ustawienie elementów w rzędzie */
+  justify-content: space-between; /* Rozstawienie elementów na przeciwnych krańcach */
+  align-items: center; /* Wyśrodkowanie elementów w pionie */
+}
+header .container .header-text {
+  font-size: 42px;
+  text-transform: capitalize;
+}
+header .container .header-text span {
+  text-transform: none;
+  font-weight: bold;
+}
+header .container .logo {
+  position: relative;
+  z-index: 3;
+}
+header .container .logo:hover::before {
+  background-color: rgb(214, 140, 3);
+  opacity: 0.8;
+}
+header .container .logo::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.7; /* Zwiększenie poziomu przezroczystości */
+  pointer-events: pointer;
+  z-index: 2;
+  transition: background-color 0.3s ease; /* Dodanie przejścia */
+}
+header .container .fa-html5 {
+  font-size: 64px; /* Ustawienie rozmiaru ikony */
+  color: #d2d4d6;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background-color: #15161a;
+  padding: 10px 0;
+  color: #202127;
+  font-size: 2.5rem;
+}
+footer .container {
+  width: 96%; /* Szerokość kontenera */
+  height: 100%;
+  margin: 0 auto; /* Wyśrodkowanie kontenera */
+  display: flex; /* Ustawienie elementów w rzędzie */
+  justify-content: space-between; /* Rozstawienie elementów na przeciwnych krańcach */
+  align-items: center; /* Wyśrodkowanie elementów w pionie */
+}
+
+footer .center {
+  width: 140px;
+  position: relative;
+}
+
+footer .center::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-200%);
+  height: 2px;
+  width: 70px;
+  background: #202127;
+}
+
+footer .center::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translateX(200%);
+  height: 2px;
+  width: 70px;
+  background: #202127;
+}
+
+footer .left {
+  width: 105px;
+  height: 110px;
+  border: 1px solid #202127;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+footer .left span {
+  height: 33.33%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+footer .right button.show-button {
+  padding: 15px 100px;
+  border: 1px solid #202127; /* Biały obramowanie */
+  background-color: transparent; /* Przezroczyste tło */
+  color: #d2d4d6; /* Biały kolor tekstu */
+  bottom: 10px; /* Ustawienie odległości od dołu */
+  right: 10px; /* Ustawienie odległości od prawej krawędzi */
+  cursor: pointer; /* Zmień kursor na wskaźnik */
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .fullscreen {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .fullscreen {
+    font-size: 0.6em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
